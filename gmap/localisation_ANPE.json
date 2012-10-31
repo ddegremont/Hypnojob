@@ -1,0 +1,27 @@
+var anpe = {
+                "paris" : [
+                            {
+                                "nom" : "Pôle Emploi Paris Hôtel de Ville",
+                                "location" : "48.858143,2.356341",
+                            },
+                            {
+                                "nom" : "Pôle Emploi Paris Bastille",
+                                "location" : "48.851218,2.36892",
+                            },
+                            {
+                                "nom" : "Pôle Emploi Paris Pelée",
+                                "location" : "48.851218,2.36892",
+                            }
+                          ],
+
+                "lyon" : [
+                            {
+                                "nom" : "Pôle Emploi Lyon Croix-Rousse",
+                                "location" : "45.778733,4.829616",
+                            },
+                            {
+                                "nom" : "Pôle Emploi Lyon 9ème",
+                                "location" : "45.768821,4.801003",
+                            }
+                        ]
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head lang="fr">
+    
+    <title>Google Maps JavaScript API v3 Example: Map Geolocation</title>
+    
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    
+    <link href="styleTest.css" rel="stylesheet">
+    
+    <!--
+    Include the maps javascript with sensor=true because this code is using a
+    sensor (a GPS locator) to determine the user's location.
+    See: https://developers.google.com/apis/maps/documentation/javascript/basics#SpecifyingSensor
+    -->
+    
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+
+    <script>
+        var map;
+        var marker;
+        var nouveau_marqueur;
+        var position_utilisateur;
+        var position_initiale;
+        var nouvelle_icone = "marker.png"; //pour changer le marqueur par défaut de Google Maps
+        var test_geolocation; // true = geolocation marche
+        var data; //pour récupérer le contenu du ficher JSON
+
+
+        // cette fonction sert à initialiser la carte et trouver la position de l'utilisateur
+        function initialize() {
+        
+            detection_systeme(); // si on utilise un smartphone, on modifie l'affiche de la carte (pour la voir à 100%)
+        
+            var mapOptions = { // les options par défaut de la carte
+                zoom: 13,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            map = new google.maps.Map(document.getElementById('map_canvas'),mapOptions); // on construit la carte et l'affiche dans la div "map_canvas"
+
+            // on vérifie si le navigateur supporte la géolocalisation ...
+            if(navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    position_initiale = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+
+                    marker = new google.maps.Marker({
+                        position: position_initiale,
+                        map: map,
+                        title: 'Here!',
+                        icon: nouvelle_icone
+                    });
+
+                map.setCenter(position_initiale);
+            }, function() {
+                    // ... et s'il ne peut pas on rentre dans la fonction "handleNoGeolocation"
+                    test_geolocation = true;
+                    handleNoGeolocation(test_geolocation);
+                });
+            } else { 
+                test_geolocation = false;
+                handleNoGeolocation(test_geolocation);
+            }
+        }
+
+        function handleNoGeolocation(errorFlag) {
+            if (errorFlag) {
+                var content = 'Erreur : la géolocalisation n\'a pas marchée, nous vous avons placé sur Paris.' ;
+            } else {
+                var content = 'Erreur : votre navigateur ne supporte pas la géolocalisation, nous vous avons placé sur Paris.';
+            }
+
+            var options = {
+                map: map,
+                position: new google.maps.LatLng(48.858165,2.350674), //la position par défaut sera Paris
+                content: content
+            };
+
+            var infowindow = new google.maps.InfoWindow(options);
+            map.setCenter(options.position);
+        }
+
+        function detection_systeme() { 
+
+            //cette fonction permet de redimensionner la div contenant la carte si l'on possède un smatphone
+            var useragent = navigator.userAgent;
+            var taille_div = document.getElementById("map_canvas");
+
+            if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1 ) {
+                taille_div.style.width = '100%';
+                taille_div.style.height = '100%';
+            } else {
+                taille_div.style.width = '800px';
+                taille_div.style.height = '500px';
+            }
+        }
+
+        function changer_localisation(new_localisation) { 
+
+            //permet de changer de localisation en fonction de la liste déroulante (et de revenir sur la géolocalisation si l'on veut ^^)
+
+            $.getJSON('localisation_ANPE.json', function(data) {
+                console.log(anpe);
+            });
+
+            if (marker != null) {
+                marker.setMap(null);
+            }
+            
+            if (nouveau_marqueur != null) {
+                nouveau_marqueur.setMap(null);
+            }
+            
+            if (new_localisation == 'paris') { 
+                position_utilisateur = new google.maps.LatLng(48.858165,2.350674);
+            } 
+            else if (new_localisation == 'lyon') {
+                position_utilisateur = new google.maps.LatLng(45.764649,4.834957);            
+            }
+            else if (new_localisation == 'limoges') {
+                position_utilisateur = new google.maps.LatLng(45.835497,1.253014);            
+            }
+            else if (new_localisation == 'orleans') {
+                position_utilisateur = new google.maps.LatLng(47.903455,1.90464);          
+            }
+            else if (new_localisation == 'votre_localisation') {
+                if(navigator.geolocation) {
+
+                    if (test_geolocation == true) {
+                        handleNoGeolocation(test_geolocation);
+                    }
+                    position_utilisateur = position_initiale;
+                
+                }
+                else {
+                    handleNoGeolocation(false);
+                }
+                      
+            }
+
+            map.setCenter(position_utilisateur); 
+
+            nouveau_marqueur = new google.maps.Marker({
+                position: position_utilisateur,
+                map: map,
+                icon: nouvelle_icone
+            });
+        }
+
+
+    </script>
+  
+  </head>
+  
+  <body onLoad="initialize()">
+    
+    <div class="conteneur">
+        
+        <h1>Test Google Maps</h1> 
+        <div id="map_canvas"></div>
+
+        <select onchange="changer_localisation(this.value)">
+        
+            <option value="votre_localisation">Votre localisation</option>
+            <option value="paris">Paris</option>
+            <option value="lyon">Lyon</option>
+            <option value="limoges">Limoges</option>
+            <option value="orleans">Orléans</option>
+            
+        </select>
+
+    </div>
+
+    </body>
+
+</html>

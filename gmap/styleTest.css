@@ -1,0 +1,19 @@
+html, body {
+	width : 984px;
+	margin: 0 auto;
+	font-family : "Myriad Web Pro";
+	background-color: #f2f2f2;
+}
+
+#map_canvas {
+	height: 500px;
+	width: 800px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+.conteneur {
+	height: 100%;
+	padding: 10px;
+	background-color: white;
+}
