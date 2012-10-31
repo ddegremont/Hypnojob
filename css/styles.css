@@ -3,8 +3,32 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input
 body{
 	background-color: #101010;
 }
+/****************************************
+*****************************************
+				LOGO
+*****************************************
+****************************************/
+.logo{
+	z-index: 100;
+}
+.logo img{
+	position: absolute;
+	top: 20px;
+	left: 18px;
+	width: 180px;
+	z-index: 110;
+}
 
+/****************************************
+*****************************************
+				PAGES
+*****************************************
+****************************************/
 
+.bp{
+	top: 50%;
+	left:
+}
 .home{
 	position: absolute;
 	background-color: #101010;
@@ -13,65 +37,9 @@ body{
 	margin: 0 auto 0 auto;
 	color: white;
 	overflow: hidden;
-
-}
-
-#menu{
-	position: fixed;
-	opacity:0.8; 	
-	top:0;
-	left:0;
-	/*background-color: #262626;*/
-	width : 200px;
-	height: 100%;
-	z-index: 90;
-
-}
-
-.menu{
-	font-family: "Myriad Pro";
-	position: relative;
-	text-align: center;
-	top: 140px;
-	color: #ffffff;
-	cursor: pointer;
-}
-.sous_menu{
-	margin-top: 10px;
-}
-
-.sous_menu img{
-	width: 40px;
-	height: 40px;
-}
-.sous_menu:hover{
-	color: #3296c8;
-
-}
-.logo{
-	z-index: 100;
-}
-.logo img{
-	position: absolute;
-	top: 20px;
-	left: 18px;
-	width: 220px;
-	z-index: 110;
-}
-
-#menu>div{
-	position: absolute;
-	height: 100%;
-	width: 300px;
 	top: 0;
-	left:-68px;
-	background-image: url('../images/elements/menu/fond/fond_menu.png');
-	background-repeat: no-repeat;
-	background-position: center right;
-	z-index: -10;
+	left: 0;
 }
-
-
 
 .slogan{
 	position: relative;
@@ -102,11 +70,24 @@ body{
 }
 
 .rotate{
-	-webkit-animation: rotate 2s -1 linear;
-	-moz-animation: rotate 2s -1 linear;
-	-o-animation: rotate 2s -1 linear;
-	-ms-animation: rotate 2s -1 linear;
+	-webkit-animation: rotate 2s 1 linear;
+	-moz-animation: rotate 2s 1 linear;
+	-o-animation: rotate 2s 1 linear;
+	-ms-animation: rotate 2s 1 linear;
 }
 
+.rotate2{
+	-webkit-animation: rotate 0.5s 1 linear;
+	-moz-animation: rotate 0.5s 1 linear;
+	-o-animation: rotate 0.5s 1 linear;
+	-ms-animation: rotate 0.5s 1 linear;
+}
+
+
+/****************************************
+*****************************************
+			PAGES ADDITIONNELS
+*****************************************
+****************************************/
 .hide{display: none;}
 .font24{font-size:}

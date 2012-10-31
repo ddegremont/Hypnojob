@@ -1,20 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   	<head>
-    	<meta charset="UTF-8">
-    	<title>HypnoJob</title>
-	    <meta name="description" content="Site de présentation de l'application hypnojob">
-  		<link rel="stylesheet" href="css/define_css3.css">
-		<link rel="stylesheet" href="css/styles.css">
-		<!-- <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'> -->
-			<script src="js/jquery.js"></script>
-			<script src="js/jquery.mousewheel.js"></script>
-			<script src="js/rotate.js"></script>
-			<!-- différents fichier js  -->
-			<script src="js/custom.js"></script>
-			<script src="js/menu.js"></script>
-			<script src="js/page_rotate.js"></script>
-
+    	<?php include('head.html'); ?>
 	</head>
 	<body>
 		<div class="logo">
@@ -29,7 +16,7 @@
 
 
 
-		<div class="white bp" id="2">
+		<div class="bp white" id="2">
 			<div class="txt">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -37,13 +24,11 @@
 				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				Test d'un commit.
-				<a href="">TEST</a>
 			</div>
 		</div>
-		<div class="grey bp" id="3">
+		<div class="bp grey" id="3">
 		</div>
-		<div class="black bp" id="4">
+		<div class="bp black" id="4">
 		</div>	
 			
 

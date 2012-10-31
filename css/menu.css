@@ -1,0 +1,57 @@
+
+#menu{
+	position: fixed;
+	opacity:0.8; 	
+	top:0;
+	left:0;
+	/*background-color: #262626;*/
+	width : 150px;
+	height: 100%;
+	z-index: 90;
+
+}
+
+.menu{
+	position: relative;
+	text-align: center;
+	top: 140px;
+	color: #ffffff;
+	cursor: pointer;
+}
+.sous_menu{
+	margin: auto;
+	margin-top: 10px;
+	width : 100px;
+}
+
+.sous_menu img{
+	width: 40px;
+	height: 40px;
+}
+.sous_menu:hover{
+	color: #3296c8;
+
+}
+.logo{
+	z-index: 100;
+}
+.logo img{
+	position: absolute;
+	top: 20px;
+	left: 18px;
+	width: 220px;
+	z-index: 110;
+}
+
+#menu>div{
+	position: absolute;
+	height: 100%;
+	width: 250px;
+	top: 0;
+	left:-68px;
+	background-image: url('../images/elements/menu/fond/fond_menu.png');
+	background-repeat: no-repeat;
+	background-position: center right;
+	z-index: -10;
+}
+
