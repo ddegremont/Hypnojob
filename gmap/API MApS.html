@@ -100,11 +100,24 @@
         function changer_localisation(new_localisation) { 
 
             //permet de changer de localisation en fonction de la liste déroulante (et de revenir sur la géolocalisation si l'on veut ^^)
-
+            var items = [];
             $.getJSON('localisation_ANPE.json', function(data) {
-                console.log(data.ville.paris);
-                //$('#test').append('<p>'+data.ville.paris+'</p><br/>');
+
+
+
+            $.each(data.ville, function(index, value) {
+                $.each(value, function(index2, value2){
+                    console.log("Ville de "+index2)
+                        $.each(value2, function(index3, value3){
+                            console.log("       Nom :" + value3.nom);
+                            console.log("       Coordonées :" + value3.coord);
+                        });
+                });
             });
+
+            });
+
+            /////////////////////////////////////////
 
             if (marker != null) {
                 marker.setMap(null);
