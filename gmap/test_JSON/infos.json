@@ -1,0 +1,25 @@
+{
+    "glossaire": {
+        "titre_principal": "Exemple de JSON",
+		"Article": {
+            "titre": "Apprendre le JSON",
+			"composants": {
+               "liste_tags": {
+               		"tag_publics" : [
+               			"Test",
+               			"Article",
+               			"Apprendre"
+               			],
+               		"tags_prives" : [
+               			"JSON",
+               			"HTML",
+               			"Hypnojob"
+               			]
+               	},
+               	"sous_titre" : "En utilisant jQuery",
+               	"Article" : "Lorem Elsass ipsum varius condimentum id, morbi sagittis et rhoncus sed habitant Oberschaeffolsheim schpeck bredele Oberschaeffolsheim Gal. wurscht so munster mänele ornare kougelhopf tchao bissame eleifend nüdle tellus quam. messti de Bischheim DNA, merci vielmols météor Heineken in, sit tellus elit Christkindelsmärik Racing. turpis, senectus tristique Coopé de Truchtersheim turpis ac consectetur dui hoplageiss non ullamcorper hopla Salu bissame nullam picon bière id baeckeoffe purus Strasbourg Pellentesque libero. yeuh. hop jetz gehts los adipiscing hopla Kabinetpapier sit Morbi salu réchime leo hopla leo Salut bisamme gravida auctor, Richard Schirmeck knepfle eget aliquam flammekueche rossbolla Huguette rucksack Mauris amet, geht's Carola Miss Dahlias Spätzle hopla porta und risus, dignissim amet schnaps Pfourtz ! Hans sed mamsell Wurschtsalad semper quam, ornare commodo Gal ! barapli lotto-owe gal libero, leverwurscht dolor vulputate Chulia Roberstau pellentesque s'guelt libero, geïz Yo dû. ac Chulien Verdammi suspendisse kuglopf kartoffelsalad gewurztraminer vielmols, ante elementum ftomi! non blottkopf, sit bissame wie chambon mollis knack amet schneck ch'ai placerat lacus .",
+               	"Auteur" : "Rémi"
+            }
+        }
+    }
+}

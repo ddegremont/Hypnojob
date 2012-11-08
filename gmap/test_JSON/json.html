@@ -1,0 +1,39 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Traitement JSON</title>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+</head>
+<body>
+
+<!-- SCRIPTS | Toujours en bas -->
+	<script type="text/javascript">
+
+		$.getJSON('infos.json', function(data) {
+
+			$('<article />', {
+				id: 'article1'
+			}).appendTo('body');
+
+		  $('#article1').append('<h1>'+data.glossaire.titre_principal+'</h1>');			
+
+		  $('#article1').append('<h3>'+data.glossaire.Article.titre+'</h3>');
+		  $('#article1').append('<quote>'+data.glossaire.Article.composants.liste_tags.tag_publics+'</span>');
+		  $('#article1').append('<span>'+data.glossaire.Article.composants.liste_tags.tags_prives+'</span>');
+		  $('#article1').append('<h5>'+data.glossaire.Article.composants.sous_titre+'</h5>');
+		  $('#article1').append('<p>'+data.glossaire.Article.composants.Article+'</p>');
+		  $('#article1').append('<a href="www.google.com">'+data.glossaire.Article.composants.Auteur+'</a>');
+
+
+		  /*$.each(data, function(key, val) {
+		  	items.push('<li id="' + key + '">' + val + '</li>'); //AJoute les items au tableau
+		  });*/
+
+		});
+
+	</script>
+<!-- /SCRIPTS -->
+</body>
+</html>
