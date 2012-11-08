@@ -102,7 +102,8 @@
             //permet de changer de localisation en fonction de la liste déroulante (et de revenir sur la géolocalisation si l'on veut ^^)
 
             $.getJSON('localisation_ANPE.json', function(data) {
-                console.log(anpe);
+                console.log(data.ville.paris);
+                //$('#test').append('<p>'+data.ville.paris+'</p><br/>');
             });
 
             if (marker != null) {
