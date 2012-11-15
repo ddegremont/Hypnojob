@@ -37,5 +37,16 @@ jQuery(document).ready(function(){
 	   	image.fadeIn('fast');
 	});
 
+
+
+
+
+
+	jQuery('.sous_menu a').click(function(){
+		console.log('coucou');
+		// return false;
+	});
+
+
 });
 

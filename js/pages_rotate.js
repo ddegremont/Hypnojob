@@ -1,12 +1,13 @@
 // jQuery.noConflict();
 
 //Fonctions relatives aux rotations de pages
+
 	jQuery('.bp').bind('mousewheel', function(e, delta) {
+		console.log('coucou home');
 	// jQuery('.bp').click(function() {
 		var id = this.id;
 		// console.log(delta);
 		if (delta>0) { // action "up" de la molette
-			// jQuery('.bp').stop();
 			switch(id){
 				case "1":
 					jQuery('.bp').removeClass('rotate');
@@ -25,8 +26,6 @@
 				break;
 				// case "4":
 					
-					
-
 			}
 				return false;
 		}
