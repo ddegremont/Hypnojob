@@ -1,0 +1,74 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Traitement JSON</title>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+</head>
+<body>
+
+<!-- SCRIPTS | Toujours en bas --> 
+	<script type="text/javascript">
+
+		$.getJSON('infos.json', function(data) {
+		  console.log(data.anpe.point_1.ville);
+
+		  // $('#article1').append('<h1>'+data.glossaire.titre_principal+'</h1>');			
+		  // $('#article1').append('<h3>'+data.glossaire.Article.titre+'</h3>');
+		  // $('#article1').append('<quote>'+data.glossaire.Article.composants.liste_tags.tag_publics+'</quote>');
+		  // $('#article1').append('<span>'+data.glossaire.Article.composants.liste_tags.tags_prives+'</span>');
+		  // $('#article1').append('<h5>'+data.glossaire.Article.composants.sous_titre+'</h5>');
+		  // $('#article1').append('<p>'+data.glossaire.Article.composants.Article+'</p>');
+		  // $('#article1').append('<a href="http://www.google.com">'+data.glossaire.Article.composants.Auteur+'</a>');
+
+		  // console.log(data.glossaire.Article.titre);
+
+
+		  var x = prompt('donnez un chiffre entre 1 et 4');
+
+		  switch (x) 
+			{ 
+			case (x==1): 
+				$('#article1').append('<span>'+data.anpe.point_1.longi+'</span><br>');			
+				$('#article1').append('<span>'+data.anpe.point_1.lati+'</span><br>');			
+				$('#article1').append('<span>'+data.anpe.point_1.ville+'</span><br/><br/><hr>	');	
+			break; 
+			case (x==2): 
+				$('#article1').append('<span>'+data.anpe.point_2.longi+'</span><br>');			
+				$('#article1').append('<span>'+data.anpe.point_2.lati+'</span><br>');			
+				$('#article1').append('<span>'+data.anpe.point_2.ville+'</span><br/><br/><hr>	');	
+			break;  
+			case (x==3): 
+				$('#article1').append('<span>'+data.anpe.point_3.longi+'</span><br>');			
+				$('#article1').append('<span>'+data.anpe.point_3.lati+'</span><br>');			
+				$('#article1').append('<span>'+data.anpe.point_3.ville+'</span><br/><br/><hr>	');	
+			break;  
+			case (x==4): 
+				$('#article1').append('<span>'+data.anpe.point_4.longi+'</span><br>');			
+				$('#article1').append('<span>'+data.anpe.point_4.lati+'</span><br>');			
+				$('#article1').append('<span>'+data.anpe.point_4.ville+'</span><br/><br/><hr>	');	
+			break; 
+			default: 
+				$('#article1').append('<span>'+data.anpe.point_1.longi+'</span><br>');			
+				$('#article1').append('<span>'+data.anpe.point_1.lati+'</span><br>');			
+				$('#article1').append('<span>'+data.anpe.point_1.ville+'</span><br/><br/><hr>	');	
+			break; 
+			}
+
+
+
+
+
+		});
+
+
+
+	</script>
+
+	<article id="article1">
+		<!-- Le code JS(pour le chargement du JSON) sera implémenté -->
+	</article>
+
+</body>
+</html>

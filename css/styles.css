@@ -1,8 +1,22 @@
 /*RESET CSS*/
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,select,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,button,caption,cite,code,dfn,em,input,optgroup,option,select,strong,textarea,th,var{font:inherit}del,ins{text-decoration:none}li{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:baseline}sub{vertical-align:baseline}legend{color:#000}:focus {    outline: 0; }ol, ul {  list-style: none; }a img { border:none;}a:link{}a:hover{}img{margin: 0}*{outline: none;}ol, ul, li {  list-style: none; }:focus{outline:none;}iframe{margin: 0; border : 0;}
 body{
-	background-color: #101010;
+	background-color: #fff;
 }
+
+/****************************************
+*****************************************
+	Définition des transition CSS3
+*****************************************
+****************************************/
+
+@-webkit-keyframes rotate{from{-webkit-transform: rotate(0deg);}to{-webkit-transform: rotate(360deg);}}
+@-moz-keyframes rotate{from{-moz-transform: rotate(0deg);}to{moz-transform: rotate(360deg);}}
+@-o-keyframes rotate{from{-o-transform: rotate(0deg);}to{-o-transform: rotate(360deg);}}
+@-ms-keyframes rotate{from{-ms-transform: rotate(0deg);}to{-ms-transform: rotate(360deg);}}
+
+
+
 /****************************************
 *****************************************
 				LOGO
@@ -13,9 +27,9 @@ body{
 }
 .logo img{
 	position: absolute;
-	top: 20px;
-	left: 18px;
-	width: 180px;
+	top: -20px;
+	left: 0;
+	width: 400px;
 	z-index: 110;
 }
 
@@ -56,7 +70,7 @@ body{
 	padding-top: 10px;
 }
 
-.white{
+.presentation{
 	position: absolute;
 	background-color: #fff;
 	border: red;
@@ -91,3 +105,34 @@ body{
 ****************************************/
 .hide{display: none;}
 .font24{font-size:}
+
+
+
+
+
+
+
+
+
+
+
+/****************************************
+*****************************************
+				Ariane
+*****************************************
+****************************************/
+
+
+/* Il y a une partie de js à intégrer 
+
+	au début du fichier JS: 
+
+
+
+	jQuery.noConflict();
+	jQuery(document).ready(function(){
+
+		//le code ici
+
+	});
+*/

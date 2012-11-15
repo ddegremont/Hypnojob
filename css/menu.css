@@ -14,33 +14,37 @@
 .menu{
 	position: relative;
 	text-align: center;
-	top: 140px;
+	top: 40px;
 	color: #ffffff;
 	cursor: pointer;
+	font-family: "Myriad Pro";
 }
 .sous_menu{
+	position: relative;
 	margin: auto;
-	margin-top: 10px;
+	margin-top: 10%;
 	width : 100px;
+	/*height: 75px;*/
+	padding-top:60px; 
 }
 
-.sous_menu img{
+.sous_menu a{
+	color:#ffffff;
+	text-decoration: none; 
+}
+.sous_menu a:hover{color: #3296c8;}
+
+.sous_menu>a img{
+	position: absolute;
 	width: 40px;
 	height: 40px;
+	top: 0px;
+	margin: auto;
+	left: 30%;
 }
 .sous_menu:hover{
 	color: #3296c8;
 
-}
-.logo{
-	z-index: 100;
-}
-.logo img{
-	position: absolute;
-	top: 20px;
-	left: 18px;
-	width: 220px;
-	z-index: 110;
 }
 
 #menu>div{
@@ -54,4 +58,5 @@
 	background-position: center right;
 	z-index: -10;
 }
+
 

@@ -1,0 +1,24 @@
+{
+  "anpe":{
+    "point_1": {
+      "longi" : "245815845",
+      "lati" : "346854634",
+      "ville" : "courbevoie"
+    },
+    "point_2": {
+      "longi" : "245815845",
+      "lati" : "346854634",
+      "ville" : "paris"
+    },
+    "point_3": {
+      "longi" : "245815845",
+      "lati" : "346854634",
+      "ville" : "montreuil"
+    },
+    "point_4": {
+      "longi" : "245815845",
+      "lati" : "346854634",
+      "ville" : "nanterre"
+    }
+  }
+}

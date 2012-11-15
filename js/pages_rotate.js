@@ -1,41 +1,65 @@
-jQuery.noConflict();
-
-jQuery(document).ready(function(){
+// jQuery.noConflict();
 
 //Fonctions relatives aux rotations de pages
-	jQuery('.bp').bind('mousewheel', function(event, delta) {
+	jQuery('.bp').bind('mousewheel', function(e, delta) {
 	// jQuery('.bp').click(function() {
 		var id = this.id;
-		var id2 = parseInt(id)+1
-		var id2 = parseInt(id)-1
-
+		// console.log(delta);
 		if (delta>0) { // action "up" de la molette
+			// jQuery('.bp').stop();
+			switch(id){
+				case "1":
+					jQuery('.bp').removeClass('rotate');
+					jQuery('#2').animate({'width': '100%', 'height': '100%', 'left': '0%','top': '0%'},{ duration: 2000});
+					jQuery('#2').addClass('rotate');	
+				break;
+				case "2":
+					jQuery('.bp').removeClass('rotate');
+					jQuery('#3').animate({'width': '100%', 'height': '100%', 'left': '0%','top': '0%'},{ duration: 2000});
+					jQuery('#3').addClass('rotate');	
+				break;
+				case "3":
+					jQuery('.bp').removeClass('rotate');
+					jQuery('#4').animate({'width': '100%', 'height': '100%', 'left': '0%','top': '0%'},{ duration: 2000});
+					jQuery('#4').addClass('rotate');	
+				break;
+				// case "4":
+					
+					
 
-			jQuery('.bp').removeClass('rotate');
-
-			jQuery('#'+id2).animate({'width': '100%'},{ duration: 2000, queue: false });
-			jQuery('#'+id2).animate({'height': '100%'},{ duration: 2000, queue: false });
-			jQuery('#'+id2).animate({'left': '0%'},{ duration: 2000, queue: false });
-			jQuery('#'+id2).animate({'top': '0%'},{ duration: 2000, queue: false });
-			jQuery('#'+id2).addClass('rotate');	
-
-
-
+			}
+				return false;
 		}
-		else if(delta<0 & id!='1'){// action "down"
-			jQuery('.bp').removeClass('rotate');
+		else if(delta<0){// action "down"
+			// jQuery('.bp').stop();
+			switch(id){
+				case "2":
+					jQuery('.bp').removeClass('rotate');
+					jQuery(this).animate({'width': '0','height': '0','left': '50%','top': '50%'},{ duration: 2000});
+					jQuery('#1').animate({'font-size': ' 1em'},{ duration: 2000, queue: false });
+					jQuery(this).addClass('rotate');
+				break;
+				case "3":
+					jQuery('.bp').removeClass('rotate');
+					jQuery(this).animate({'width': '0','height': '0','left': '50%','top': '50%'},{ duration: 2000});
+					jQuery('#2').animate({'font-size': ' 1em'},{ duration: 2000, queue: false });
+					jQuery(this).addClass('rotate');
+				brea
+				case "4":
+					jQuery('.bp').removeClass('rotate');
+					jQuery(this).animate({'width': '0','height': '0','left': '50%','top': '50%'},{ duration: 2000});
+					jQuery('#3').animate({'font-size': ' 1em'},{ duration: 2000, queue: false });
+					jQuery(this).addClass('rotate');	
+				break;
+				// case "4":
+					
+					
 
-			// disparition de la page 
-			jQuery(this).animate({'width': '0'},{ duration: 2000, queue: false });
-			jQuery(this).animate({'height': '0'},{ duration: 2000, queue: false });
-			jQuery(this).animate({'left': '50%'},{ duration: 2000, queue: false });
-			jQuery(this).animate({'top': '50%'},{ duration: 2000, queue: false });
-			jQuery('#'+id3).animate({'font-size': ' 1em'},{ duration: 2000, queue: false });
-
-			jQuery(this).addClass('rotate');
-			
+			}
+		return false;
 		}
-			return false;
 	});
 
-}); 
+ 
+
+

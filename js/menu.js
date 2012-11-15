@@ -1,7 +1,7 @@
-jQuery.noConflict();
+// jQuery.noConflict();
 
 jQuery(document).ready(function(){
-	var t_menu = "155px";
+	var t_menu = "150px";
 //FONCTION RELATIVE AU MENU
 	//on cache le menu au bout de 5 seconde depuis l'arrivé sur le site si la personne n'est pas déjà passée dessus
 	setTimeout(function(){
@@ -25,26 +25,16 @@ jQuery(document).ready(function(){
 	//lorsque l'on passe sur un élément du menu
 	jQuery('.sous_menu').mouseenter(function(){
 		var id = this.id;
-		// jQuery(this).children('img').attr('src','images/elements/menu/'+id+'/hover.png');
 
-	    var image = jQuery('#'+id).children('img');
-	    // image.fadeOut('fast', function () {
-	    	// image.addClass('rotate2');
-	        image.attr('src', 'images/elements/menu/'+id+'/hover.png');
-	    //     image.fadeIn('fast');
-	    // });
+	    var image = jQuery('#'+id).children('a').children('img.img_normal');
+	   	image.fadeOut('fast');
 	});
 
 	jQuery('.sous_menu').mouseleave(function(){
 		var id = this.id;
-		// jQuery(this).children('img').attr('src','images/elements/menu/'+id+'/normal.png');
-		var image = jQuery('#'+id).children('img');
-			// image.removeClass('rotate2');
 
-	    // image.fadeOut('fast', function () {
-	        image.attr('src', 'images/elements/menu/'+id+'/normal.png');
-	    //     image.fadeIn('fast');
-	    // });
+		var image = jQuery('#'+id).children('a').children('img.img_normal');
+	   	image.fadeIn('fast');
 	});
 
 });
