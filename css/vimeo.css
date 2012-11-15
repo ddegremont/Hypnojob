@@ -1,0 +1,11 @@
+#conteneur {width: 75%; margin: 0 auto;}
+#thumbs { overflow: auto; height: 375px; width: 320px; padding: 0; float: left; }
+#thumbs ul { list-style-type: none; margin: 0 10px 0; padding: 0 0 10px 0; }
+#thumbs ul li { height: 75px;}
+
+.thumb { border: 0; float: left; width: 100px; height: 75px; background: url(http://a.vimeocdn.com/thumbnails/defaults/default.75x100.jpg); margin-right: 10px; }
+
+#embed { background-color: #333333; padding: 10px; height: 336px; width: 605px; float: left;  }
+
+#portrait { float: left; margin-right: 5px; max-width: 100px; }
+#stats { clear: both; margin-bottom: 20px; }
