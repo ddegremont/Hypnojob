@@ -15,21 +15,17 @@
 
 		function setupGallery(videos) {
 
-			// Set the user's thumbnail and the page title
-			jQuery('#stats').prepend('<img id="portrait" src="' + videos[0].user_portrait_medium + '" />');
-			jQuery('#stats h2').text("Vidéos de l'utilisateur " + videos[0].user_name);
-
-			// Load the first video
+			// CHarger la première vidéo
 			getVideo(videos[0].url);
 
-			// Add the videos to the gallery
-			for (var i = 0; i < videos.length; i++) {
+			// Ajoute les vidéos à la gallerie
+			for (var i = 0; i < 3; i++) {
 				var html = '<li><a href="' + videos[i].url + '"><img src="' + videos[i].thumbnail_medium + '" class="thumb" />';
 				html += '<p>' + videos[i].title + '</p></a></li>';
 				jQuery('#thumbs ul').append(html);
 			}
 
-			// Switch to the video when a thumbnail is clicked
+			// Passer la vidéo quand on clique sur une vignette
 			jQuery('#thumbs a').click(function(event) {
 				event.preventDefault();
 				getVideo(this.href);
@@ -39,5 +35,6 @@
 		}
 
 		function switchVideo(video) {
+			jQuery('#stats').append('<h2>'+video.title+'</h2>');
 			jQuery('#embed').html(unescape(video.html));
 		}
