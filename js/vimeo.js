@@ -4,13 +4,13 @@
 		var videosCallback = 'setupGallery';
 		var vimeoUsername = 'hetic';
 
-		// Get the user's videos
+		// Choper les vidéos de l'utilisateur
 		jQuery(document).ready(function() {
 			jQuery.getScript(apiEndpoint + vimeoUsername + '/videos.json?callback=' + videosCallback);
 		});
 
 		function getVideo(url) {
-			jQuery.getScript(oEmbedEndpoint + '?url=' + url + '&width=605&height=336&color=9ECC3D&callback=' + oEmbedCallback);
+			jQuery.getScript(oEmbedEndpoint + '?url=' + url + '&width=605&height=336&color=3296c8&callback=' + oEmbedCallback);
 		}
 
 		function setupGallery(videos) {
@@ -35,6 +35,7 @@
 		}
 
 		function switchVideo(video) {
-			jQuery('#stats').append('<h2>'+video.title+'</h2>');
+			var titreVideo = '<h2 id="videoTitre">'+video.title+'<h2>';
+			jQuery('#videoTitre').replaceWith(titreVideo);
 			jQuery('#embed').html(unescape(video.html));
 		}
