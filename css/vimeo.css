@@ -1,5 +1,7 @@
 #conteneur {width: 945px; position: relative; top: 200px; margin: 0 auto; color: #FFF;}
-#conteneur h2 { font-size: 20px; font-family: 'Oswald'; display: inline;}
+#conteneur h2 { font-size: 20px; display: inline;}
+#stats { clear: both; margin-bottom: 20px;}
+#stats h1 { text-align: right; font-size: 60px;}
 #thumbs { overflow: auto; height: 375px; width: 320px; padding: 0; float: left; }
 #thumbs ul { list-style-type: none; margin: 0 10px 0; padding: 0 0 10px 0; }
 #thumbs ul li { height: 75px;}
@@ -7,4 +9,3 @@
 .thumb { border: 0; float: left; width: 100px; height: 75px; background: url(http://a.vimeocdn.com/thumbnails/defaults/default.75x100.jpg); margin-right: 10px; }
 #embed { padding-right: 10px; height: 336px; width: 605px; float: left; }
 #portrait { float: left; margin-right: 5px; max-width: 100px; }
-#stats { clear: both; margin-bottom: 20px; }
