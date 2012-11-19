@@ -35,11 +35,15 @@ body{
 
 /****************************************
 *****************************************
-				FONT
+				STYLES DES POLICES
 *****************************************
 ****************************************/
 h1,h2,h3,h4 { font-family: 'Oswald'; }
 p,a,span,div{ font-family: 'Myriad Pro', Arial, Helvetica, Tahoma, sans-serif;}
+::selection { background:#3296c8; color:#fff; }
+::-moz-selection {background:#3296c8; color:#fff; }
+::-webkit-selection { background:#3296c8; color:#fff; }
+
 /****************************************
 *****************************************
 				PAGES
