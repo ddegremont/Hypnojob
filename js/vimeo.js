@@ -35,7 +35,7 @@
 		}
 
 		function switchVideo(video) {
-			var titreVideo = '<h2 id="videoTitre">'+video.title+'<h2>';
+			var titreVideo = '<h2 id="videoTitre">'+video.title+'</h2>';
 			jQuery('#videoTitre').replaceWith(titreVideo);
 			jQuery('#embed').html(unescape(video.html));
 		}

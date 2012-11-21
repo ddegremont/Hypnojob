@@ -73,9 +73,9 @@
 
 	case 'contact':
 		?>
-			<div class="bp impressions" id="6">
+			<div class="bp contact" id="6">
 			<?php 
-			// include('pages/impressions.php')
+			include('pages/contact.php')
 			;?>	
 		</div>
 		<?php
