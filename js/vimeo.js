@@ -2,7 +2,7 @@
 		var oEmbedEndpoint = 'http://vimeo.com/api/oembed.json'
 		var oEmbedCallback = 'switchVideo';
 		var videosCallback = 'setupGallery';
-		var vimeoUsername = 'hetic';
+		var vimeoUsername = '14777579';
 
 		// Choper les vidéos de l'utilisateur
 		jQuery(document).ready(function() {
@@ -19,7 +19,7 @@
 			getVideo(videos[0].url);
 
 			// Ajoute les vidéos à la gallerie
-			for (var i = 0; i < 3; i++) {
+			for (var i = 0; i < 4; i++) {
 				var html = '<li><a href="' + videos[i].url + '"><img src="' + videos[i].thumbnail_medium + '" class="thumb" />';
 				html += '<p>' + videos[i].title + '</p></a></li>';
 				jQuery('#thumbs ul').append(html);
