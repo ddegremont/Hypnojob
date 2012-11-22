@@ -19,6 +19,7 @@
     <script type="text/javascript" src="jquery.js"></script>
 
     <script>
+
         var map;
         var marker;
         var nouveau_marqueur;
@@ -27,7 +28,7 @@
         var nouvelle_icone = "marker.png"; //pour changer le marqueur par défaut de Google Maps
         var test_geolocation; // true = geolocation marche
         var data; //pour récupérer le contenu du ficher JSON
-
+        var tableau_markers=new Array(); // tableau contenant les markers pour pouvoir les supprimer
 
         // cette fonction sert à initialiser la carte et trouver la position de l'utilisateur
         function initialize() {
@@ -45,16 +46,8 @@
             if(navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function(position) {
                     position_initiale = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-
-                    marker = new google.maps.Marker({
-                        position: position_initiale,
-                        map: map,
-                        title: 'Here!',
-                        icon: nouvelle_icone
-                    });
-
-                map.setCenter(position_initiale);
-            }, function() {
+                    map.setCenter(position_initiale);
+                }, function() {
                     // ... et s'il ne peut pas on rentre dans la fonction "handleNoGeolocation"
                     test_geolocation = true;
                     handleNoGeolocation(test_geolocation);
@@ -93,74 +86,76 @@
                 taille_div.style.height = '100%';
             } else {
                 taille_div.style.width = '800px';
-                taille_div.style.height = '500px';
+                taille_div.style.height = '250px';
             }
         }
 
         function changer_localisation(new_localisation) { 
 
             //permet de changer de localisation en fonction de la liste déroulante (et de revenir sur la géolocalisation si l'on veut ^^)
-            var items = [];
+
             $.getJSON('localisation_ANPE.json', function(data) {
 
+                $.each(data.ville, function (index_ville, donnees) {
+                    
+                    if (index_ville == new_localisation && new_localisation != 4) {
+                       
+                        $.each(donnees, function (index_coord, objet) {
+                            
+                            for(i=0;i<objet.length;i++) {
 
+                                // objet[i] renvoie un string, il faut donc splitter sa valeur pour obtenir la lat et la lng séparemment et ainsi réutiliser les deux pour avoir les coordonnées des ANPE
 
-            $.each(data.ville, function(index, value) {
-                $.each(value, function(index2, value2){
-                    console.log("Ville de "+index2)
-                        $.each(value2, function(index3, value3){
-                            console.log("       Nom :" + value3.nom);
-                            console.log("       Coordonées :" + value3.coord);
+                                var latlng = objet[i].split(",");
+                                var latlng_principale = objet[0].split(",");                  
+                                nouveau_marqueur = new google.maps.Marker({
+                                    position: new google.maps.LatLng(latlng[0],latlng[1]),
+                                    map: map,
+                                    icon: nouvelle_icone
+                                });
+
+                                tableau_markers.push(nouveau_marqueur);
+                                map.setCenter(new google.maps.LatLng(latlng_principale[0],latlng_principale[1]));
+                            }
+
                         });
+                        //permet de sortir de la boucle quand on a trouvé le résultat (ville choisie)
+                        return false; 
+                    }
+
+                    else if (new_localisation == 4) {
+                        console.log("new_localisation == 4");
+                        if(navigator.geolocation) {                           
+                            if (test_geolocation == true) 
+                            {
+                                handleNoGeolocation(test_geolocation);
+                            }
+                            position_utilisateur = position_initiale;
+                        }
+                        else {
+                            handleNoGeolocation(test_geolocation);
+                        }
+                        return false;
+                    }
+
                 });
-            });
 
             });
-
-            /////////////////////////////////////////
 
             if (marker != null) {
                 marker.setMap(null);
             }
             
             if (nouveau_marqueur != null) {
-                nouveau_marqueur.setMap(null);
-            }
-            
-            if (new_localisation == 'paris') { 
-                position_utilisateur = new google.maps.LatLng(48.858165,2.350674);
-            } 
-            else if (new_localisation == 'lyon') {
-                position_utilisateur = new google.maps.LatLng(45.764649,4.834957);            
-            }
-            else if (new_localisation == 'limoges') {
-                position_utilisateur = new google.maps.LatLng(45.835497,1.253014);            
-            }
-            else if (new_localisation == 'orleans') {
-                position_utilisateur = new google.maps.LatLng(47.903455,1.90464);          
-            }
-            else if (new_localisation == 'votre_localisation') {
-                if(navigator.geolocation) {
-
-                    if (test_geolocation == true) {
-                        handleNoGeolocation(test_geolocation);
-                    }
-                    position_utilisateur = position_initiale;
-                
-                }
-                else {
-                    handleNoGeolocation(false);
-                }
-                      
+                remove_markers();
             }
 
-            map.setCenter(position_utilisateur); 
+        }
 
-            nouveau_marqueur = new google.maps.Marker({
-                position: position_utilisateur,
-                map: map,
-                icon: nouvelle_icone
-            });
+        function remove_markers() {
+            for (i=0;i<tableau_markers.length;i++) {
+                tableau_markers[i].setMap(null);
+            }
         }
 
 
@@ -177,13 +172,15 @@
 
         <select onchange="changer_localisation(this.value)">
         
-            <option value="votre_localisation">Votre localisation</option>
-            <option value="paris">Paris</option>
-            <option value="lyon">Lyon</option>
-            <option value="limoges">Limoges</option>
-            <option value="orleans">Orléans</option>
+            <option value="4">Votre localisation</option>
+            <option value="0">Paris</option>
+            <option value="1">Lyon</option>
+            <option value="2">Limoges</option>
+            <option value="3">Orléans</option>
             
         </select>
+
+        <div id="test"></div>
 
     </div>
 
