@@ -124,13 +124,13 @@
                     }
 
                     else if (new_localisation == 4) {
-                        console.log("new_localisation == 4");
+                        
                         if(navigator.geolocation) {                           
                             if (test_geolocation == true) 
                             {
                                 handleNoGeolocation(test_geolocation);
                             }
-                            position_utilisateur = position_initiale;
+                           map.setCenter(position_initiale);
                         }
                         else {
                             handleNoGeolocation(test_geolocation);
