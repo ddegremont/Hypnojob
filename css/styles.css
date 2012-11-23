@@ -55,7 +55,7 @@ label { font-size: 1.2em; }
 
 .bp{
 	top: 50%;
-	left:
+	/*left:*/
 }
 
 
@@ -66,7 +66,6 @@ label { font-size: 1.2em; }
 ****************************************/
 .home{
 	position: absolute;
-	background-color: #101010;
 	width: 100%;
 	height: 100%;
 	margin: 0 auto 0 auto;
@@ -97,7 +96,6 @@ label { font-size: 1.2em; }
 
 .presentation{
 	position: absolute;
-	background-color: #fff;
 	border: red;
 	overflow: hidden;
 	width: 100%;
@@ -105,7 +103,12 @@ label { font-size: 1.2em; }
 	top: 50%;
 	left:50%;
 	color: black;
+	background-color: #FFF;
 
+}
+
+.forfait{
+	background-color: #F00;
 }
 
 .rotate{
