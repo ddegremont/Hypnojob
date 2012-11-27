@@ -2,145 +2,49 @@
 <!DOCTYPE html>
 <html lang="fr">
   	<head>
+  	<!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
     	<?php 
     	include('head.html'); ?>
 	</head>
 	<body>
-		<div class="logo">
-			<img src="images/elements/logo/normal.png" alt="logo du site">
-		</div>
 		<?php 
-		include('pages/menu.php')
+			include('pages/menu.php')
 		;?>
-<?php
-	error_reporting(E_ALL & ~E_NOTICE);
-	switch ($_GET['page'])
-	{
-	case 'home':
-			?>
-		<div class="bp home" id="1">
-			<?php 
-			include('pages/home.php')
-			;?>	
-		</div>
-
+			
 		<?php
-		break;
-
-	case 'presentation':
+			include('pages/liens_connect.php')
 		?>
-			<div class="bp presentation" id="2">
-			<?php 
-			include('pages/presentation.php')
-			;?>	
-		</div>
-		<?php
+	
 
-		break;
+		<section class="bp home active" id="1">
+			<?php 	include('pages/home.php');?>	
+		</section>
 
-	case 'forfaits':
-		?>
-			<div class="bp forfait" id="3">
-			<?php 
-			include('pages/forfait.php')
-			;?>	
-		</div>
-		<?php
+			<section class="bp presentation" id="2">
+			<?php 	include('pages/presentation.php');?>	
+		</section>
 
-		break;
+		<section class="bp forfaits" id="3">
+			<?php 	include('pages/forfait.php');?>	
+		</section>
 
-	case 'hypnoses':
-		?>
-			<div class="bp hypnoses" id="4">
-			<?php 
-			include('pages/hypnoses.php')
-			;?>	
-		</div>
-		<?php
-
-		break;
-
-	case 'utilisation':
-		?>
-			<div class="bp utilisation" id="5">
-			<?php 
-			include('pages/utilisation.php')
-			;?>	
-		</div>	
-		<?php
-
-		break;
-
-	case 'contact':
-		?>
-			<div class="bp contact" id="6">
-			<?php 
-			include('pages/contact.php')
-			;?>	
-		</div>
-		<?php
-
-		break;
-
-	default:
-	?>
-		<div class="bp home" id="1">
-			<?php 
-			include('pages/home.php')
-			;?>	
-		</div>
-
-		<?php		break;
+		<section class="bp hypnoses" id="4">
+			<?php 	include('pages/hypnoses.php');?>	
+		</section>
 		
-	}
-
-	?>
-
-
-
-		<!-- <div class="logo">
-			<img src="images/elements/logo/normal.png" alt="logo du site">
-		</div>
-		<?php 
-		include('pages/menu.php')
-		;?> -->
+		<section class="bp utilisation" id="5">
+			<?php 	include('pages/utilisation.php');?>	
+		</section>	
 		
-<!-- 
-		<div class="bp home" id="1">
-			<?php 
-			// include('pages/home.php')
-			;?>	
-		</div>
+		<section class="bp impressions" id="6">
+			<?php 	include('pages/impressions.php');?>	
+		</section>
 
-		<div class="bp presentation" id="2">
-			<?php 
-			// include('pages/presentation.php')
-			;?>	
-		</div>
-		
-		<div class="bp forfait" id="3">
-			<?php 
-			// include('pages/forfait.php')
-			;?>	
-		</div>
-		
-		<div class="bp hypnoses" id="4">
-			<?php 
-			// include('pages/hypnoses.php')
-			;?>	
-		</div>
-		
-		<div class="bp utilisation" id="5">
-			<?php 
-			// include('pages/utilisation.php')
-			;?>	
-		</div>	
-		
-		<div class="bp impressions" id="6">
-			<?php 
-			// include('pages/impressions.php')
-			;?>	
-		</div>	 -->
+		<section class="bp contact" id="7">
+			<?php 	include('pages/contact.php');?>	
+		</section>
 
 
 	</body>
