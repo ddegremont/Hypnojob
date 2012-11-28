@@ -17,11 +17,11 @@ body{
 ****************************************/
 	@font-face {
     font-family: 'oswaldbold';
-    src: url('font/oswald-bold-webfont.eot');
-    src: url('font/oswald-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('font/oswald-bold-webfont.woff') format('woff'),
-         url('font/oswald-bold-webfont.ttf') format('truetype'),
-         url('font/oswald-bold-webfont.svg#oswaldbold') format('svg');
+    src: url('../font/oswald-bold-webfont.eot');
+    src: url('../font/oswald-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/oswald-bold-webfont.woff') format('woff'),
+         url('../font/oswald-bold-webfont.ttf') format('truetype'),
+         url('../font/oswald-bold-webfont.svg#oswaldbold') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -226,20 +226,20 @@ body{
 
 .home article .first_white{
 	color: #fff;
-	font-family: "oswaldbold , Times New Roman";
+	font-family: "oswaldbold" , "Times New Roman";
 	font-size: 1.5em;
 }
 
 .home article .second_white{
 	color: #fff;
-	font-family: "oswaldbold , Times New Roman";
+	font-family: "oswaldbold" , "Times New Roman";
 	font-size: 1.6em;
 
 }
 
 .txtBleuHome{
 	position: absolute;
-	top: 250px;
+	top: 270px;
 	left: 20%;
 	color: #498aad;
 }
@@ -248,7 +248,7 @@ body{
 	font-size: 4.5em;
 	font-weight: bold;
 	line-height: 1;
-	font-family: "oswaldbold , Times New Roman";
+	font-family: "oswaldbold" , "Times New Roman";
 
 }
 
